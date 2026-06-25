@@ -1,18 +1,172 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    "Open Sans",
+    "Helvetica Neue",
+    sans-serif;
 }
 
 html,
 body {
-    height: 100%;
-    width: 100%;
+  height: 100%;
+  width: 100%;
 }
 
 main {
-    height: 100%;
-    width: 100%;
-    background-color: #E6FE6E;
+  width: 100%;
+  background-color: #e6fe6e;
+}
+
+nav {
+  width: 100%;
+  padding: 60px 130px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+nav .part2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 140px;
+}
+
+nav h2 {
+  font-size: 48px;
+  font-weight: 500;
+}
+
+nav a {
+  font-size: 35px;
+  color: black;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+section {
+  padding: 60px 100px;
+}
+
+section .hero-text1 {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.hero-text1 h1 {
+  font-size: 300px;
+  text-transform: uppercase;
+  font-weight: 900;
+  line-height: 300px;
+}
+
+.hero-text1 .video {
+  height: 150px;
+  width: 600px;
+  background-image: url(https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExYmZ0cGUwNnU2eGhndmF3OTNpMWI4NTR5a2tva2RqNDZrMDh2N2d2ayZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/VhqXKXIA50q1a/giphy.gif);
+  background-size: cover;
+  border-radius: 100px;
+  margin-top: 40px;
+  padding: 5px;
+}
+
+.video .play {
+  height: 100%;
+  width: 160px;
+  border-radius: 100px;
+  background-color: black;
+  border: 4px solid white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.play i {
+  color: white;
+  font-size: 50px;
+}
+
+section .hero-text2 {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.hero-text2 h1 {
+  font-size: 300px;
+  text-transform: uppercase;
+  font-weight: 900;
+  line-height: 300px;
+}
+
+.hero-text2 p {
+  font-size: 42px;
+  width: 900px;
+  font-weight: 500;
+}
+
+.links {
+  display: flex;
+  width: 40%;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20px;
+  margin-left: 120px;
+}
+
+.links a {
+  text-decoration: none;
+  font-size: 30px;
+  color: black;
+  border: 2px solid black;
+  border-radius: 100px;
+  padding: 15px 25px;
+  font-weight: 100;
+}
+
+.links a i {
+  margin-right: 20px;
+}
+
+.img {
+  height: 1200px;
+  border-top-left-radius: 200px;
+  border-top-right-radius: 200px;
+  width: 90%;
+  margin-left: 5%;
+  background-image: url(https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/0bcdd3169623867.645034cd0e743.png);
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  margin: 120px;
+}
+
+.img .arrow {
+  height: 350px;
+  width: 350px;
+  border-radius: 50%;
+  background-color: black;
+  position: absolute;
+  right: 0;
+  top: -10%;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 4px solid white;
+}
+
+.arrow i {
+  font-size: 180px;
 }
