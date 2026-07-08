@@ -1,5 +1,6 @@
 const jwt = require("jsonwebtoken");
 const postModel = require("../models/post.model");
+const albumModel = require("../models/album.model");
 const { uploadFile } = require("../services/storage.service");
 
 async function createPost(req, res) {
@@ -48,4 +49,46 @@ async function createPost(req, res) {
   }
 }
 
-module.exports = { createPost };
+async function createAlbum(req, res) {
+  const token = req.cookies.token;
+
+  if (!token) {
+    return res.status(401).json({
+      message: "Authentication Required",
+    });
+  }
+
+  try {
+    const decoded = jwt.verify(token, process.env.JWT_SECRET);
+    if (decoded.role !== "artist") {
+      return res.status(403).json({
+        message: "Unauthorized",
+      });
+    }
+
+    const { title, musicIds } = req.body;
+
+    const album = await albumModel.create({
+      title,
+      artist: decoded.id,
+      musics: musicIds,
+    });
+
+    res.status(201).json({
+      message: "Album created successfully!",
+      album: {
+        id: album._id,
+        title: album.title,
+        artist: album.artist,
+        musics: album.musics,
+      },
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(401).json({
+      message: "unauthorized",
+    });
+  }
+}
+
+module.exports = { createPost, createAlbum };
