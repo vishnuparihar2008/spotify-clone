@@ -14,7 +14,7 @@ async function createPost(req, res) {
   try {
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
 
-    if (decoded !== "artist") {
+    if (decoded.role !== "artist") {
       return res.status(403).json({
         message: "Unauthorized",
       });
@@ -37,7 +37,7 @@ async function createPost(req, res) {
         id: post._id,
         uri: post.uri,
         title: post.title,
-        artist: decoded.artist,
+        artist: post.artist,
       },
     });
   } catch (e) {
